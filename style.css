@@ -1,0 +1,119 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+/*general styles*/
+html {
+  font-size: 15px; }
+
+body {
+  background-color: #1a1a1d; }
+
+.add-layer {
+  opacity: 1; }
+
+.remove-layer {
+  opacity: 0; }
+
+/*genral styles*/
+.title {
+  color: #c3073f;
+  text-align: center;
+  font-family: 'Anton';
+  font-size: 45px;
+  letter-spacing: 2px;
+  font-weight: normal; }
+
+.play-again-button {
+  font-weight: bold;
+  text-align: center;
+  background-color: #6f2232;
+  border: #6f2232;
+  padding: 10px 20px;
+  font-family: 'Quicksand';
+  display: block;
+  width: 10rem;
+  margin: auto;
+  font-size: 18px;
+  transition: all 0.5s;
+  cursor: pointer; }
+  .play-again-button:hover {
+    background-color: #c3073f;
+    border: #c3073f; }
+
+.win-title {
+  display: none;
+  text-align: center;
+  margin: 25px;
+  color: #950740;
+  font-family: 'Quicksand';
+  font-size: 30px; }
+
+.symbols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  grid-gap: 20px;
+  width: 70%;
+  margin: 30px auto; }
+
+.symbol {
+  background-color: #4e4e50;
+  display: flex;
+  border-radius: 10px;
+  position: relative; }
+  .symbol i {
+    font-family: Font Awesome\ 5 Brands;
+    align-self: center;
+    font-size: 6rem;
+    text-align: center;
+    width: 100%; }
+
+.layer {
+  background-color: #950740;
+  position: absolute;
+  border-radius: 10px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: background-color .5s; }
+  .layer:hover {
+    background-color: #c3073f; }
+
+footer {
+  text-align: center;
+  background-color: #950740;
+  color: #1a1a1d;
+  padding: 2rem;
+  font-family: 'Quicksand';
+  font-weight: bold;
+  font-size: 1.2rem;
+  height: 10vh; }
+
+/*****media query*****/
+@media (min-width: 601px) and (max-width: 1000px) {
+  .symbols {
+    width: 90%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 7rem); }
+
+  footer {
+    height: 12vh; } }
+@media (max-width: 600px) {
+  .play-again-button {
+    width: 6rem; }
+
+  .symbols {
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 7rem); }
+
+  .symbol i {
+    font-size: 3rem; }
+
+  footer {
+    height: 12vh; } }
+
+/*# sourceMappingURL=style.css.map */
