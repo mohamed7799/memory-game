@@ -83,14 +83,20 @@ body {
     background-color: #c3073f; }
 
 footer {
-  text-align: center;
+  display: flex;
+  align-items: center;
   background-color: #950740;
-  color: #1a1a1d;
-  padding: 2rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
   font-family: 'Quicksand';
   font-weight: bold;
   font-size: 1.2rem;
-  height: 10vh; }
+  height: 5vh; }
+  footer p {
+    text-align: center; }
 
 /*****media query*****/
 @media (min-width: 601px) and (max-width: 1000px) {

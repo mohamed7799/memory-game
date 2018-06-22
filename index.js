@@ -67,10 +67,12 @@ function match(event) {
 
         if (icon1 === null) {
             icon1 = layer.nextElementSibling;
+            console.log(icon1);
 
         }
         else if (icon2 === null) {
             icon2 = layer.nextElementSibling;
+            console.log(icon2);
             if (icon1.className != icon2.className) {
                 setTimeout(function () {
                     icon1.previousElementSibling.classList.add('add-layer');
@@ -79,12 +81,16 @@ function match(event) {
                     icon2.previousElementSibling.classList.remove('remove-layer');
                     icon1 = null;
                     icon2 = null;
-                }, 1000);
+                    console.log(icon1);
+                    console.log(icon2);
+                }, 500);
 
             }
             else {
                 icon1 = null;
                 icon2 = null;
+                console.log(icon1);
+                console.log(icon2);
                 win();
             }
         }
