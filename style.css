@@ -106,7 +106,8 @@ footer {
     grid-template-rows: repeat(4, 7rem); }
 
   footer {
-    height: 12vh; } }
+    position: static;
+    height: 10vh; } }
 @media (max-width: 600px) {
   .play-again-button {
     width: 6rem; }
@@ -120,6 +121,7 @@ footer {
     font-size: 3rem; }
 
   footer {
-    height: 12vh; } }
+    height: 10vh;
+    position: static; } }
 
 /*# sourceMappingURL=style.css.map */
