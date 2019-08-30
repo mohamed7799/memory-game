@@ -10,10 +10,12 @@ let lock = false;
 //functions
 
 function addLayer() {
-  for (let i = 0; i < layers.length; i++) {
-    layers[i].classList.remove("remove-layer");
-    layers[i].classList.add("add-layer");
-  }
+  setTimeout(() => {
+    for (let i = 0; i < layers.length; i++) {
+      layers[i].classList.remove("remove-layer");
+      layers[i].classList.add("add-layer");
+    }
+  }, 1500);
 }
 
 function shuffleArray(array) {
@@ -26,6 +28,11 @@ function shuffleArray(array) {
 }
 
 function randomizeIcons() {
+  //show them first
+  for (let i = 0; i < layers.length; i++) {
+    layers[i].classList.remove("add-layer");
+    layers[i].classList.add("remove-layer");
+  }
   addLayer();
   let array = Array.from(icons);
   let tempArray = [];
@@ -63,10 +70,8 @@ function match(event) {
 
     if (icon1 === null) {
       icon1 = layer.nextElementSibling;
-      console.log(icon1);
     } else if (icon2 === null) {
       icon2 = layer.nextElementSibling;
-      console.log(icon2);
       lock = true;
       if (icon1.className != icon2.className) {
         setTimeout(function() {
@@ -93,6 +98,9 @@ function match(event) {
     }
   }
 }
+
+//initialize the game
+addLayer();
 
 //event listeners
 playAgain.addEventListener("click", randomizeIcons);
