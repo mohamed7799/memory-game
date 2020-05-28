@@ -1,93 +1,93 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+@import './resst';
+@import './mixins';
+
+$main-color:rgb(58, 202, 142);
 
 
-/*general styles*/
-html{
-    font-size: 15px
-}
+/*genral styles*/
 
-body{
-    background-color: #1a1a1d;
-}
-
-.add-layer{
+.add-layer {
     opacity: 1;
 }
 
-.remove-layer{
+.remove-layer {
     opacity: 0;
 }
 
 
 
-/*genral styles*/
-
-.title{
-    color: #c3073f;
+.title {
+    color: $main-color;
     text-align: center;
-    font-family: 'Anton';
+    padding-top: 2rem;
     font-size: 45px;
     letter-spacing: 2px;
     font-weight: normal;
 }
 
-.play-again-button{
-    font-weight: bold;
-    text-align: center;
-    background-color: #6f2232;
-    border: #6f2232;
-    padding: 10px 20px;
-    font-family: 'Quicksand';
-    display: block;
-    width: 10rem;
-    margin: auto;
-    font-size: 18px;
-    transition: all .5s ;
+.play-again-button {
+    padding: .5rem 1rem;
+    margin: 2rem auto;
+    font-size: 1.2rem;
+    transition: all .5s;
     cursor: pointer;
-    &:hover{
-        background-color: #c3073f;
-        border: #c3073f;
+    color: $main-color;
+    border: 2px solid $main-color;
+    border-radius: 10px;
+    letter-spacing: 2px;
+
+    &:hover {
+        background-color: $main-color;
+        color: black;
     }
 }
 
-.win-title{
+.win-title {
     display: none;
     text-align: center;
     margin: 25px;
-    color: #950740;
-    font-family: 'Quicksand';
+    color: $main-color;
     font-size: 30px;
 }
 
-.symbols{
+.symbols {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(2,200px);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     width: 70%;
     margin: 30px auto;
+
+    @include tablet {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mobile {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.symbol{
+.symbol {
     background-color: #4e4e50;
     display: flex;
     border-radius: 10px;
     position: relative;
-    i{
-        font-family: Font Awesome\ 5 Brands;
+    padding: 1rem;
+
+    i {
+
         align-self: center;
         font-size: 6rem;
         text-align: center;
         width: 100%;
+
+        @include mobile {
+            font-size: 3rem;
+        }
     }
 }
 
-.layer{
-    background-color: #950740;
+.layer {
+    background-color: $main-color;
     position: absolute;
     border-radius: 10px;
     left: 0;
@@ -95,65 +95,26 @@ body{
     top: 0;
     bottom: 0;
     transition: background-color .5s;
-    
-    &:hover{
-        background-color: #c3073f;
+    transition: .3s;
+    cursor: pointer;
+
+    &:hover {
+        border: 5px solid rgb(28, 37, 28);
     }
 }
 
-footer{
-    display: flex;
+footer {
+
     align-items: center;
-    background-color: #950740;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    justify-content: center;
-    font-family: 'Quicksand';
+    background-color: $main-color;
+    color: white;
     font-weight: bold;
     font-size: 1.2rem;
-    height: 5vh;
-    p{
+    padding: 1rem;
+    margin-top: auto;
+    font-weight: 100;
+
+    p {
         text-align: center;
     }
 }
-
-/*****media query*****/
-
-@media (min-width:601px)and(max-width:1000px){
-    .symbols{
-        width: 90%;
-        grid-template-columns: repeat(3,1fr);
-        grid-template-rows: repeat(4,7rem);
-    }
-    footer{
-        position: static;
-        height: 10vh;
-    }
-}
-
-
-
-@media (max-width:600px){
-    .play-again-button{
-        width: 6rem;
-    }
-    .symbols{
-        width: 90%;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(4,7rem);
-    }
-    .symbol{
-        i{
-            font-size: 3rem
-        }
-    }
-    footer{
-        height: 10vh;
-        position: static;
-    }
-}
-
-
-

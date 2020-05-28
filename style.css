@@ -1,127 +1,154 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
-/*general styles*/
 html {
-  font-size: 15px; }
+  height: 100%;
+}
 
 body {
-  background-color: #1a1a1d; }
-
-.add-layer {
-  opacity: 1; }
-
-.remove-layer {
-  opacity: 0; }
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: black;
+}
 
 /*genral styles*/
+.add-layer {
+  opacity: 1;
+}
+
+.remove-layer {
+  opacity: 0;
+}
+
 .title {
-  color: #c3073f;
+  color: #3aca8e;
   text-align: center;
-  font-family: 'Anton';
+  padding-top: 2rem;
   font-size: 45px;
   letter-spacing: 2px;
-  font-weight: normal; }
+  font-weight: normal;
+}
 
 .play-again-button {
-  font-weight: bold;
-  text-align: center;
-  background-color: #6f2232;
-  border: #6f2232;
-  padding: 10px 20px;
-  font-family: 'Quicksand';
-  display: block;
-  width: 10rem;
-  margin: auto;
-  font-size: 18px;
-  transition: all 0.5s;
-  cursor: pointer; }
-  .play-again-button:hover {
-    background-color: #c3073f;
-    border: #c3073f; }
+  padding: .5rem 1rem;
+  margin: 2rem auto;
+  font-size: 1.2rem;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  cursor: pointer;
+  color: #3aca8e;
+  border: 2px solid #3aca8e;
+  border-radius: 10px;
+  letter-spacing: 2px;
+}
+
+.play-again-button:hover {
+  background-color: #3aca8e;
+  color: black;
+}
 
 .win-title {
   display: none;
   text-align: center;
   margin: 25px;
-  color: #950740;
-  font-family: 'Quicksand';
-  font-size: 30px; }
+  color: #3aca8e;
+  font-size: 30px;
+}
 
 .symbols {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (1fr);
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 200px);
   grid-gap: 20px;
   width: 70%;
-  margin: 30px auto; }
+  margin: 30px auto;
+}
+
+@media screen and (max-width: 800px) and (min-width: 600px) {
+  .symbols {
+    -ms-grid-columns: (1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .symbols {
+    -ms-grid-columns: (1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 .symbol {
   background-color: #4e4e50;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border-radius: 10px;
-  position: relative; }
+  position: relative;
+  padding: 1rem;
+}
+
+.symbol i {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  font-size: 6rem;
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
   .symbol i {
-    font-family: Font Awesome\ 5 Brands;
-    align-self: center;
-    font-size: 6rem;
-    text-align: center;
-    width: 100%; }
+    font-size: 3rem;
+  }
+}
 
 .layer {
-  background-color: #950740;
+  background-color: #3aca8e;
   position: absolute;
   border-radius: 10px;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  transition: background-color .5s; }
-  .layer:hover {
-    background-color: #c3073f; }
+  -webkit-transition: background-color .5s;
+  transition: background-color .5s;
+  -webkit-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.layer:hover {
+  border: 5px solid #1c251c;
+}
 
 footer {
-  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  background-color: #950740;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  justify-content: center;
-  font-family: 'Quicksand';
+  background-color: #3aca8e;
+  color: white;
   font-weight: bold;
   font-size: 1.2rem;
-  height: 5vh; }
-  footer p {
-    text-align: center; }
+  padding: 1rem;
+  margin-top: auto;
+  font-weight: 100;
+}
 
-/*****media query*****/
-@media (min-width: 601px) and (max-width: 1000px) {
-  .symbols {
-    width: 90%;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 7rem); }
-
-  footer {
-    position: static;
-    height: 10vh; } }
-@media (max-width: 600px) {
-  .play-again-button {
-    width: 6rem; }
-
-  .symbols {
-    width: 90%;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 7rem); }
-
-  .symbol i {
-    font-size: 3rem; }
-
-  footer {
-    height: 10vh;
-    position: static; } }
+footer p {
+  text-align: center;
+}
 
 /*# sourceMappingURL=style.css.map */
